@@ -1,5 +1,5 @@
 #include <stdlib.h>
-#include "list.h"
+#include "sort_list.list.h"
 
 t_list	*sort_list(t_list *lst, int (*cmp)(int, int))
 {
@@ -21,4 +21,35 @@ t_list	*sort_list(t_list *lst, int (*cmp)(int, int))
 	}
 	lst = tmp;
 	return (lst);
+}
+
+#include <stdio.h>
+
+int main()
+{
+	t_list *start;
+
+	t_list aloha;
+	aloha.data = 5;
+
+	t_list volador;
+	volador.data = 3;
+
+	t_list soupersun;
+	soupersun.data=145;
+
+	aloha.next = &volador;
+	volador.next = &soupersun;
+
+	start = &aloha;
+	while(start->data != 0)
+	{
+		int data = start->data;
+		printf("\n%d\n",data);
+		if(start->next != 0)
+		start = start->next;
+		else
+		break;
+	}
+	
 }
