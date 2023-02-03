@@ -1,0 +1,7 @@
+gcc -g filename
+lldb a.out
+b main
+run
+gui
+s ->
+3 esc to exit
