@@ -1,6 +1,27 @@
-## Subject
+#include <stdlib.h>
 
-```
+int *ft_rrange(int start, int end)
+{
+	int *range;
+	int i = 0;
+	int n = end - start + 1;
+
+	if (start > end)
+		return (ft_rrange(end, start));
+	range = (int *)malloc(sizeof(int) * n);
+	if (range)
+	{
+		while (i < n)
+		{
+			range[i] = start;
+			start++;
+			i++;
+		}
+	}
+	return (range);
+}
+
+/*
 Assignment name  : ft_rrange
 Expected files   : ft_rrange.c
 Allowed functions: malloc
@@ -20,4 +41,4 @@ Examples:
 - With (-1, 2) you will return an array containing 2, 1, 0 and -1.
 - With (0, 0) you will return an array containing 0.
 - With (0, -3) you will return an array containing -3, -2, -1 and 0.
-```
+*/
